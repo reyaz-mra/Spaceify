@@ -131,7 +131,7 @@ app
       } else {
         console.log(docs)
         req.session.user = docs;
-        res.redirect("/profile");
+        res.redirect("/blog");
       }
     });
   });
