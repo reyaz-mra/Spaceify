@@ -81,7 +81,7 @@
                 </script>  -->
                 <br><br>        
                  <label for="img">Upload Image</label>
-                 <input type="text" id="img" name="img" placeholder="upload image Url (Copy from Google & Paste Here){Optional}">
+                 <input style="text-transform:none"; type="text" id="img" name="img" placeholder="upload image Url (Copy from Google & Paste Here){Optional}">
                  <br><br>        
 
                 <input type="submit" value="publish">
@@ -97,11 +97,7 @@
 
         }
 
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        
 
     </script>
     </body>
