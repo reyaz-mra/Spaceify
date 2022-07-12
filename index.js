@@ -212,7 +212,8 @@ app.get("/profile", async (req, res) => {
     const user = req.session.user;
     Blog.find({username:user.username},(err,result)=>{
       res.render("profile", {blogs:result,username : user.username,name : user.name,email : user.email})
-    })
+    }).sort({ 
+      "_id" : -1 })
   } else {
     res.redirect("/login");
   }
@@ -222,7 +223,8 @@ app.get("/blog", (req, res) => {
       const user = req.session.user;
       Blog.find({},(err,result)=>{
         res.render("blog",{blogs:result,username:user.username});
-    });
+    }).sort({ 
+      "_id" : -1 })
     } else {
       res.redirect("/login");
     }
@@ -248,7 +250,8 @@ app.get("/blog", (req, res) => {
       const user = req.session.user;
       Review.find({},(err,result)=>{
         res.render("review", {revw:result,username : user.username,name:user.name})
-      })
+      }).sort({ 
+      "_id" : -1 })
     } else {
       res.redirect("/login");
     }
