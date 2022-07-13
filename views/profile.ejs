@@ -52,9 +52,9 @@
             <div class="blog-details">
               <h4><%=blog.title%></h4>
               <p><%=blog.notes.substring(0,150)%></p>
-              <a href="/post/<%=blog._id%>">Continue reading</a>
-              <a href="/edit/<%=blog._id%>" style="font-size: 2.1rem;"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href="/delete/<%=blog._id%>" onclick="return confirm('Are you sure you want to delete');" style="color: red; font-size: 2.1rem;"><i class="fa-solid fa-trash-can"></i></a>
+              <a href="/post/<%=blog._id%>">Continue reading</a><br><br>
+              <a href="/edit/<%=blog._id%>" title="Edit" style="font-size: 2.1rem;"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/delete/<%=blog._id%>" title="Delete" onclick="return confirm('Are you sure you want to delete');" style="color: red; font-size: 2.1rem;"><i class="fa-solid fa-trash-can"></i></a>
             </div>
           </div>
           <% }) %>
