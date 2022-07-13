@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/dropdown.css">
+    <link rel="stylesheet" href="/css/write.css">
+    <link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+    <title>Write</title>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Spaceify</a>
+        <nav class="navbar">
+            <a  href="/home">Home</a>
+            <a  href="/blog">Blog</a>
+            <a href="/write">Write</a>
+            <a href="/about">About</a>
+            <a href="/review">Review</a>
+            <a href="/contact">Contact</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <a  style="background: none; padding: 0;" id="user" href="/profile"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="profile">  
+            <div class="dropdown">
+                <a style="text-transform: none; font-size: 1.7rem; color: black;" href="#" ><%= username %> <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                <a href="/profile"><i class="fa-solid fa-user"></i> profile</a>
+                <a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> logout</a>
+                </div>
+              </div>
+        </div>
+    </header>
+      <div id="write" class="write">
+        <div class="container" style="margin-top: 6rem;">
+            <form action="/update/<%= blg._id%>" method="post">
+                <p><label>Title</label></p>
+                <input type="text" id="title" name="title" value="<%= blg.title %>" placeholder="Add Title" required>
+                
+                <!-- username -->
+                <input style="display: none;" type="text" id="username" name="username" value="<%= blg.username %>">
+
+                
+               <br><br><br>
+                <textarea name="notes" cols="130" style="max-width:100%; height: 30rem; border: none;"  placeholder="Start Writing Here..."><%= blg.notes %></textarea>
+
+                <br><br>        
+                        
+
+                <input type="submit" value="Update">
+            </form>
+        </div>
+    </div>
+    <script>
+        let menu = document.querySelector('#menu-bars');
+        let navbar = document.querySelector('.navbar');
+        menu.onclick = () =>{
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+
+        }
+
+    </script>
+    </body>
+    </html>
