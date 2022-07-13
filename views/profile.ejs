@@ -53,6 +53,8 @@
               <h4><%=blog.title%></h4>
               <p><%=blog.notes.substring(0,150)%></p>
               <a href="/post/<%=blog._id%>">Continue reading</a>
+              <a href="/edit/<%=blog._id%>" style="font-size: 2.1rem;"><i class="fa-solid fa-pen-to-square"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="/delete/<%=blog._id%>" onclick="return confirm('Are you sure you want to delete');" style="color: red; font-size: 2.1rem;"><i class="fa-solid fa-trash-can"></i></a>
             </div>
           </div>
           <% }) %>
@@ -73,9 +75,9 @@
 
            <div class="box">
                <h3>about us</h3>
-               <p>We have crossed 10 million happy customers and 100 million rides.
-                Rapido is here to revolutionize intra-city travel as we bring youredefined comfort
-                & convenience with our disruptive service model.</p>
+               <pLooking for some free blog sites to help you start sharing your writing with the world? Whether
+                 you just want to share updates with your family and friends or you want to start a blog and build a
+                 broader audience, Start with Spaceify</p>
            </div>
            <div class="box">
                <h3>quick links</h3>
