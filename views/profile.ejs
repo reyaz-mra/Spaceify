@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/prfl.css">
     <!-- <link rel="stylesheet" href="css/blog.css"> -->
     <link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
     <title>Profile</title>
@@ -27,18 +28,79 @@
         </div>
       </header>
 
-      <section class="profile" id="profile" style="background: #faf7f7;">
-        <div class="image">
-            <img style="height:40rem; width:35rem" src="images/profile.jpg" alt="">
+      
+    <section>
+      <div class="rt-container">
+            <div class="col-rt-12">
+                <div class="Scriptcontent">
+                
+  <!-- Student Profile -->
+  <div class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+              <img class="profile_img" src="https://t4.ftcdn.net/jpg/00/97/00/09/360_F_97000908_wwH2goIihwrMoeV9QF3BW6HtpsVFaNVM.jpg" alt="student dp">
+              <h3><%= name %></h3>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="col-lg-8 crd">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0">General Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Username</th>
+                  <td width="2%">:</td>
+                  <td><%= username %></td>
+                </tr>
+                <tr>
+                  <th width="30%">Name	</th>
+                  <td width="2%">:</td>
+                  <td><%= name %></td>
+                </tr>
+                <tr>
+                  <th width="30%">Gmail</th>
+                  <td width="2%">:</td>
+                  <td><%= email %></td>
+                </tr>
+                <!-- <tr>
+                  <th width="30%">Religion</th>
+                  <td width="2%">:</td>
+                  <td>Group</td>
+                </tr>
+                <tr>
+                  <th width="30%">blood</th>
+                  <td width="2%">:</td>
+                  <td>B+</td>
+                </tr> -->
+              </table>
+            </div>
+          </div>
+          <div style="height: 26px; margin-top: 3rem;"></div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <a href="#blog" class="btn">My Blogs</a>
+              <a href="/logout" class="btn">Logout</a>
+            </div>
+            <div class="card-body pt-0">
+                
+            </div>
+          </div>
         </div>
-        <div class="content">
-            <p>userid:<span style="text-transform: none;"><%= username %></span></p> 
-            <p>Name :<span> <%= name %></span></p>
-            <p>Gmail:<span style="text-transform: none;"><%= email %></span></p> 
-            <a href="#blog">My Blogs</a>
-            <a href="/logout">Logout</a>
-        </div>
-    </section>
+      </div>
+    </div>
+  </div>
+  <!-- partial -->
+             
+          </div>
+      </div>
+      </div>
+  </section>
 
 
     
