@@ -253,7 +253,7 @@ app.get("/blog", (req, res) => {
   app.get("/write", (req, res) => {
     if (req.session.user && req.cookies.user_sid) {
       const user = req.session.user;
-      res.render("write", {username : user.username,name : user.name})
+      res.render("write", {username : user.username,name : user.name,email : user.email})
     } else {
       res.redirect("/login");
     }
