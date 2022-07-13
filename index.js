@@ -197,6 +197,27 @@ app
       console.log(error)
     }
   });
+// Edit And Delete
+app.get("/delete/:id",(req,res)=>{
+  const user = req.session.user;
+  Blog.findByIdAndDelete(req.params.id,(err,result)=>{
+    res.redirect("/profile")
+  })
+});
+
+app.get("/edit/:id",(req,res)=>{
+  const user = req.session.user;
+  Blog.findById(req.params.id,(err,result)=>{
+      res.render("update",{blg:result,username:user.username});
+  })  
+})
+
+
+app.post("/update/:id",async (req,res) =>{
+  await Blog.findByIdAndUpdate(req.params.id,req.body);
+  res.redirect("/profile")
+})
+
 
 // route for user's dashboard
 app.get("/home", async (req, res) => {
