@@ -58,10 +58,10 @@
             <img src="<%=blog.img%>" alt="Blog">
           </div>
           <div class="blog-details">
-            <h4 style="font-family:'Times New Roman', Times, serif ;"><%=blog.title%></h4>
+            <h4><%=blog.title%></h4>
             <p><%=blog.notes.substring(0,170)%></p>
             <a href="/post/<%=blog._id%>">Continue reading</a><br>
-            <span class="author"><p style="font-size: 1.2rem; font-family: 'Times New Roman', Times, serif;">Published by: <%= blog.name %></p></span>
+            <span class="author"><p>Published by: <%= blog.name %></p></span>
           </div>  
         </div>
         <% }) %>
