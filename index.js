@@ -247,7 +247,11 @@ app.get("/blog", (req, res) => {
     }).sort({ 
       "_id" : -1 })
     } else {
-      res.redirect("/login");
+      Blog.find({},(err,result)=>{
+        res.render("blog",{blogs:result,username:"Guest"});
+    }).sort({ 
+      "_id" : -1 })
+//       res.redirect("/login");
     }
   });
   app.get("/write", (req, res) => {
@@ -285,11 +289,24 @@ app.get("/blog", (req, res) => {
       res.redirect("/login");
     }
   });
+//   app.get("/post/:id",(req,res)=>{
+//     const user = req.session.user;
+//     Blog.findById(req.params.id,(err,result)=>{
+//         res.render("post",{blog:result,usernames:user.username});
+//     })
+// });
+
   app.get("/post/:id",(req,res)=>{
+    if (req.session.user && req.cookies.user_sid) {
     const user = req.session.user;
     Blog.findById(req.params.id,(err,result)=>{
         res.render("post",{blog:result,usernames:user.username});
     })
+  }else{
+    Blog.findById(req.params.id,(err,result)=>{
+      res.render("post",{blog:result,usernames:"Guest"});
+  })
+  }
 });
 
 // route for user logout
