@@ -197,6 +197,14 @@ app
       console.log(error)
     }
   });
+app.get("/index", (req, res) => {
+    if (req.session.user && req.cookies.user_sid) {
+      const user = req.session.user;
+      res.redirect("/home")
+    } else {
+      res.redirect("index");
+    }
+  });
 // Edit And Delete
 app.get("/delete/:id",(req,res)=>{
   const user = req.session.user;
