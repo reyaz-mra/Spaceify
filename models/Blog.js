@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const moment = require("moment");
 const dateIndia = moment().format("DD/MM/YYYY");
-const defImage = "https://qphs.fs.quoracdn.net/main-qimg-5871e4e05dd020122e560c53c0a520db";
+const defImage = "https://qph.cf2.quoracdn.net/main-qimg-a4b08b0e31e27f5550b6a3cb5c2f4252-pjlq";
 // console.log(dateIndia)
 
 
