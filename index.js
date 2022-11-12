@@ -120,7 +120,7 @@ app
       title: req.body.title,
       notes: htmlToFormattedText(req.body.notes),
       date:req.body.date,
-      img:req.body.img || "https://qphs.fs.quoracdn.net/main-qimg-5871e4e05dd020122e560c53c0a520db",
+      img:req.body.img || "http://cdn2.hubspot.net/hub/53/file-23115630-jpg/blog/images/blogging_image.jpg",
       username:req.body.username,
       name:req.body.name,
     });
